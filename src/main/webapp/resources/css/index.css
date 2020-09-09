@@ -48,7 +48,7 @@ body {
 	border: none;
 	font-family: 'Kumbh Sans', sans-serif;
 	letter-spacing: 1px;
-	color: #676767;
+	color: #454d66;
 }
 
 #panel section{
@@ -66,22 +66,40 @@ body {
 	height: inherit;
 	text-align: center;
     border: 1px solid #e5e5e5;
+    padding: 15px 0px;
 }
 
 #panel section div .title-value{
 	font-size: 25pt;
 	font-weight: 500;
-    color: #676767;
+    color: #454d66;
     font-family: 'Kumbh Sans', sans-serif;
 }
 
 #panel section div .subtitle-value{
 	font-size: 75pt;
 	font-weight: 600;
+	color: #2d132c;
 	font-family: 'Orbitron', sans-serif;
 }
 
 #panel section div .subtitle-status {
 	font-family: 'Kumbh Sans', sans-serif;
 	font-size: 15pt;
+}
+
+.alarm {
+	animation-name: alarm-animation;
+  	animation-duration: .5s;
+  	animation-iteration-count: infinite;
+  	animation-direction: alternate-reverse;
+}
+
+.alarm span {
+	color: #fdfdfd !important;
+}
+
+@keyframes alarm-animation {
+  0% { background: #801336; }
+  100% { background: #c72c41; }
 }

@@ -1,0 +1,87 @@
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Orbitron', sans-serif;
+}
+
+
+#panel {
+	height: 100vh;
+    width: 100vw;
+}
+
+#panel header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 15vh;
+	border-bottom: 1px solid #e5e5e5;
+	background: #f3f3f3a3;
+}
+
+#panel header .title {
+	font-size: 25pt;
+	color: #ffa85e;
+	text-shadow: 2px 2px #ff8a59;
+	font-weight: 600;
+}
+
+#panel header img {
+	width: 65px;
+    margin-right: 10px;
+}
+
+#panel main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 5vh;
+}
+
+#panel main .ui-clock{
+	font-weight: 500;
+	background: transparent;
+	border: none;
+	font-family: 'Kumbh Sans', sans-serif;
+	letter-spacing: 1px;
+	color: #676767;
+}
+
+#panel section{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+#panel section div {
+	display: grid;
+    justify-content: center;
+    align-items: center;
+	width: 100%;
+	height: inherit;
+	text-align: center;
+    border: 1px solid #e5e5e5;
+}
+
+#panel section div .title-value{
+	font-size: 25pt;
+	font-weight: 500;
+    color: #676767;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+#panel section div .subtitle-value{
+	font-size: 75pt;
+	font-weight: 600;
+	font-family: 'Orbitron', sans-serif;
+}
+
+#panel section div .subtitle-status {
+	font-family: 'Kumbh Sans', sans-serif;
+	font-size: 15pt;
+}

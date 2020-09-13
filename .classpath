@@ -25,7 +25,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Marcio Costa/Documents/rxtx-2.1-7-bins-r2/RXTXcomm.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Marcio Costa/Downloads/jSerialComm-2.6.2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

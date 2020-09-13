@@ -53,13 +53,15 @@ body {
 
 #panel section{
 	display: flex;
-    justify-content: center;
+	flex-wrap: wrap;
+	justify-content: center;
     align-items: center;
     height: 40vh;
 }
 
 #panel section div {
 	display: grid;
+	flex: 50%;
     justify-content: center;
     align-items: center;
 	width: 100%;
@@ -88,18 +90,33 @@ body {
 	font-size: 15pt;
 }
 
-.alarm {
-	animation-name: alarm-animation;
+#panel .ui-dialog {
+	box-shadow: 0 0 black;
+    border-radius: 0;
+    border: 0;
+}
+
+#panel .ui-dialog-titlebar {
+	background: transparent;
+}
+
+#panel .ui-dialog #panel-alert{
+	font-family: 'Orbitron', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 20px);
+    font-size: 65pt;
+    font-weight: 600;
+    animation-name: alarm-animation;
   	animation-duration: .5s;
   	animation-iteration-count: infinite;
   	animation-direction: alternate-reverse;
 }
 
-.alarm span {
-	color: #fdfdfd !important;
-}
 
 @keyframes alarm-animation {
-  0% { background: #801336; }
-  100% { background: #c72c41; }
+  0% { color: #801336; }
+  100% { color: #c72c41; }
 }
+

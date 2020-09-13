@@ -1,67 +1,57 @@
 package bean;
 
 import java.io.IOException;
-import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.fazecast.jSerialComm.SerialPort;
-
-import util.SerialPortArduino;
+import model.Sensor;
+import util.ManagerSerialPort;
 
 public class Main {
 
-	private static SerialPort port;
+	private static String portName =  "COM3";
+	private static ManagerSerialPort managerPort;
+	private static List<Sensor> sensors;
 	
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
-		/*SerialPortArduino arduino = new SerialPortArduino();
-		arduino.initialize();
-		Thread t=new Thread() {
-			 public void run() {
-				 try {
-				 //Messy implementation but it works for this demo purpose
-				    while(true){
-				      //optional sleep  
-				      Thread.sleep(500);
+		managerPort = new ManagerSerialPort();
+		
+		//managerPort.getAvalaiblePorts();
+		
+		managerPort.connect(portName);
+		
+		if(!managerPort.isConnected())
+			return;
+		
+		String response = managerPort.readSerial();
+		
+		sensors = transformSerialToSensor(response);
+		for(Sensor sensor : sensors) {
+			System.out.println(sensor.getSensorName() + ", " + sensor.getValueReference() + ", " + sensor.getResultReference());
+		}
+	}
+	
+	private static List<Sensor> transformSerialToSensor(String responseSerial) {
+		sensors = new ArrayList<Sensor>();
+		
+		String serialSplit[] = new String[10];
+		serialSplit = responseSerial.split("\n");
+		
+		 String variables[] = serialSplit[5].split(";");
+		
+		for(int i = 0; i < 4; i++) {
+			String valueReference = variables[i].replaceAll("[\\[\\]\"]", "");
 
-						
-				    }
-				 } catch (InterruptedException ie) {}
-			 }
-		 };
-		 t.start();
-		 System.out.println("Started");
-		 }*/
-		 SerialPort[] portNames = SerialPort.getCommPorts();
-		 
-		 for(SerialPort portName : portNames) {
-			 System.out.println(portName.getSystemPortName());
-		 }
-		 
-		 connect();
-	}
-	
-	private static void connect() {
-		port = SerialPort.getCommPort("COM3");
-		
-		if(port.openPort()) {
-			System.out.println("Conectado!");
-			readSerial();
+			String valueParsed[] = valueReference.split(",");
+			
+			Sensor sensor = new Sensor();
+			sensor.setSensorName(valueParsed[0]);
+			sensor.setValueReference(valueParsed[1]);
+			sensor.setResultReference(valueParsed[2] == "1" ? true : false);
+			
+			sensors.add(sensor);
 		}
-		else {
-			System.out.println("Desconectado!");
-		}
-	}
-	
-	private static void readSerial() {
-		port.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0);
-		InputStream in = port.getInputStream();
 		
-		try
-		{
-		   for (int j = 0; j < 1000; ++j)
-		      System.out.print((char)in.read());
-		   in.close();
-		} catch (Exception e) { e.printStackTrace(); }
-		port.closePort();
+		return sensors;		
 	}
 }

@@ -17,40 +17,33 @@
     <h:body>
    	
    		<h:form id="panel">
-   			
+   		
+   			<p:poll interval="3" listener="#{alarmeBean.getValuesFromSerial()}" update="@form" />
         	<header>
         		<img src="#{facesContext.externalContext.requestContextPath}/resources/images/fire.png"/>
         		<h:outputText class="title" value="ALARME CONTRA INCÊNDIO" />
         	</header>
         	<main>
         		<p:clock class="timer" pattern="dd/MM/yyyy HH:mm:ss" />
-        		
         	</main>
-        	<section>
-        		<div class="alarm">
-        			<h:outputText class="title-value" value="Temperatura" />
-        			<h:outputText class="subtitle-value" value="21.0 C°" />
-        			<h:outputText class="subtitle-status" value="#{alarmeBean.title}" />
-        		</div>
-        		<div>
-        			<h:outputText class="title-value" value="Gás" />
-        			<h:outputText class="subtitle-value" value="21.0 C°" />
-        			<h:outputText class="subtitle-status" value="Normal" />
-        		</div>
-        	</section>
-        	<section>
-        		<div>
-        			<h:outputText class="title-value" value="Luz" />
-        			<h:outputText class="subtitle-value" value="21.0 C°" />
-        			<h:outputText class="subtitle-status" value="Normal" />
-        		</div>
-        		<div>
-        			<h:outputText class="title-value" value="Presença" />
-        			<h:outputText class="subtitle-value" value="21.0 C°" />
-        			<h:outputText class="subtitle-status" value="Normal" />
-        		</div>
+        	
+        	<section id="dataSensors">
+	        	<p:repeat value="#{alarmeBean.sensors}" var="sensor">
+			         <div>
+	        			<h:outputText class="title-value" value="#{alarmeBean.convertSensorToName(sensor.sensorName)}" />
+	        			<h:outputText class="subtitle-value" value="#{alarmeBean.getValueReferenceWithUnitMeasurement(sensor.sensorName, sensor.valueReference)}" />
+	        			<h:outputText class="subtitle-status" value="#{sensor.valuePercentage}" />
+	        		</div>
+			    </p:repeat>        		
         	</section>
         	
+        	<p:dialog  widgetVar="dialogAlert" modal="true" height="500" width="100vw">
+        		<div id="panel-alert">
+        			<h:outputText value="#{alarmeBean.phraseAlert}" />
+        		</div>
+			    
+			</p:dialog>
+			
    		</h:form>
     	
     </h:body>

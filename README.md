@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/mcosta21/alarme-contra-incendio/master/docs/logo.png" alt="Logo" width="600">=
+    <img src="https://raw.githubusercontent.com/mcosta21/alarme-contra-incendio/master/docs/logo.png" alt="Logo" width="600">
 </p>
 
 <p align="center">

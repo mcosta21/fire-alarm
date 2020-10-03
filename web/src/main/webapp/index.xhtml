@@ -24,7 +24,9 @@
         		<h:outputText class="title" value="ALARME CONTRA INCÊNDIO" />
         	</header>
         	<main>
-        		<p:clock class="timer" pattern="dd/MM/yyyy HH:mm:ss" />
+        		<div id="message-alert">
+        			<h:outputText value="#{alarmeBean.phraseAlert}" />
+        		</div>
         	</main>
         	
         	<section id="dataSensors">
@@ -37,13 +39,20 @@
 			    </p:repeat>        		
         	</section>
         	
+        	<footer>
+        		<a href="https://github.com/mcosta21/alarme-contra-incendio" targer="_blank">
+        			<img src="#{facesContext.externalContext.requestContextPath}/resources/images/github.svg"/>
+        			<p>Marcio Costa</p>
+        		</a>
+        		<p:clock class="timer" pattern="dd/MM/yyyy HH:mm:ss" />
+        	</footer>
+        	<!-- 
         	<p:dialog  widgetVar="dialogAlert" modal="true" height="500" width="100vw">
         		<div id="panel-alert">
         			<h:outputText value="#{alarmeBean.phraseAlert}" />
         		</div>
-			    
 			</p:dialog>
-			
+			 -->
    		</h:form>
     	
     </h:body>

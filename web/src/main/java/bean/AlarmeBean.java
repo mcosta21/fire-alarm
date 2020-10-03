@@ -36,7 +36,7 @@ public class AlarmeBean implements Serializable{
 		System.out.println("init");
 		managerPort = new ManagerSerialPort();
 		
-		//managerPort.getAvalaiblePorts();
+		//managerPort.getAvailablePorts();
 		sensors = new ArrayList<Sensor>();
 		for(int i = 0; i < 4; i++) {
 			Sensor sensorTemp = new Sensor();

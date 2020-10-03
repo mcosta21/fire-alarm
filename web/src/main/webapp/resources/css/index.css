@@ -39,16 +39,21 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 5vh;
+	height: 10vh;
 }
 
-#panel main .ui-clock{
-	font-weight: 500;
-	background: transparent;
-	border: none;
-	font-family: 'Kumbh Sans', sans-serif;
-	letter-spacing: 1px;
-	color: #454d66;
+#panel main #message-alert{
+	font-family: 'Orbitron', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 20px);
+    font-size: 25pt;
+    font-weight: 600;
+    animation-name: alarm-animation;
+  	animation-duration: .5s;
+  	animation-iteration-count: infinite;
+  	animation-direction: alternate-reverse;
 }
 
 #panel section{
@@ -56,7 +61,7 @@ body {
 	flex-wrap: wrap;
 	justify-content: center;
     align-items: center;
-    height: 40vh;
+    height: 70vh;
 }
 
 #panel section div {
@@ -65,7 +70,7 @@ body {
     justify-content: center;
     align-items: center;
 	width: 100%;
-	height: inherit;
+	height: 50%;
 	text-align: center;
     border: 1px solid #e5e5e5;
     padding: 15px 0px;
@@ -79,9 +84,10 @@ body {
 }
 
 #panel section div .subtitle-value{
-	font-size: 70pt;
+	font-size: 65pt;
 	font-weight: 600;
 	color: #2d132c;
+	margin-top: -15px;
 	font-family: 'Orbitron', sans-serif;
 }
 
@@ -118,5 +124,38 @@ body {
 @keyframes alarm-animation {
   0% { color: #801336; }
   100% { color: #c72c41; }
+}
+
+#panel footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 5vh;
+	background: #f3f3f3a3;
+	padding: 0 30px;
+	font-family: 'Kumbh Sans', sans-serif;
+}
+
+#panel footer a {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+}
+
+#panel footer a img {
+	height: 3vh;
+	margin-right: 10px
+}
+
+#panel footer a p {
+	margin-top: 4px;
+}
+
+#panel footer .ui-clock{
+	font-weight: 500;
+	background: transparent;
+	border: none;
+	letter-spacing: 1px;
+	color: #454d66;
 }
 

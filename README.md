@@ -1,12 +1,10 @@
 
 <p align="center">
-  <a href="#">
-    <img src="https://raw.githubusercontent.com/mcosta21/alarme-contra-incendio/master/docs/logo.png" alt="Logo" width="600">
-  </a>
+    <img src="https://raw.githubusercontent.com/mcosta21/alarme-contra-incendio/master/docs/logo.png" alt="Logo" width="600">=
 </p>
 
 <p align="center">
-    Aplicação JSF que realizar comunicação serial com Arduino UNO para monitorar ambiente a fim de prevenir contra incêndios.
+    Aplicação JSF que realiza comunicação serial com Arduino UNO para monitorar ambiente a fim de prevenir contra incêndios.
     <br />
   </p>
 
@@ -79,20 +77,20 @@ Então, a partir dos valores condicionais, foi possível atribuir um conjunto pa
 
 ## Estrutura
 
-Vale ressaltar que além da criação da aplicação, foi construido um circuito similar na plataforma Tinkercad, de modo que possamos realizar testes virtualmente. Então, note que a estrutura do projeto se divide em três pastas, onde tem-se: 
+Além da criação da aplicação, foi construido um circuito similar na plataforma Tinkercad, de modo que possamos realizar testes virtualmente. Então, note que a estrutura do projeto se divide em três pastas, onde tem-se: 
 
 * **arduino**: Pasta contendo o arquivo com código fonte para implementação do projeto no Arduino UNO;
 * **tinkercad**: Pasta contendo o arquivo com código fonte usado em simulação do circuito no Tinkercad;
 * **web**: Pasta referente a aplicação JSF;
 
 #### Arduino e Tinkercad
-A implementação do código em ambos ambientes seguiram a mesma base, diferenciado-se apenas no modelo dos sensores, que por sua vez, influenciou nos valores de medição de cada um deles. E além disso, a simulação do projeto no tinkercad conta com um Display 16x2 para subir a ausência da aplicação web.
+A implementação do código em ambos ambientes seguiram a mesma base, diferenciado-se apenas no modelo dos sensores, que por sua vez, influencia nos valores de medição de cada um deles. E além disso, a simulação do projeto no tinkercad conta com um Display 16x2 para subir a ausência da aplicação web.
 
 #### Web
-Quanta a aplicação JSF, foi criado um projeto Maven com uso da IDE Eclipse e um servidor Tomcat 9 para rodar a aplicação. No arquivo **pom.xml** é encontrado as dependências do projeto, onde tem-se a dependência referida ao framework **Primefaces** para criar da interface, e a biblioteca **JSerialComm**, reponsável pela métodos de comunicação serial com o arduino.
+Quanta a aplicação JSF, foi criado um projeto Maven com uso da IDE Eclipse e um servidor Tomcat 9 para rodar a aplicação. No arquivo **pom.xml** é encontrado as dependências do projeto, onde tem-se a dependência referida ao framework **Primefaces** para criar da interface, e a biblioteca **JSerialComm**, reponsável pelos métodos de comunicação serial com o arduino. Vale ressaltar que a aplicação e o arduino irão estabelecer a comunicação serial via porta USB.
 
 ## Tecnologias
-Basicamente, este projeto foi desenvolvimento com as seguintes tencologias:
+Basicamente, este projeto foi desenvolvimento com as seguintes tecnologias:
 
 <p align="center">
  <a href="https://pt.wikipedia.org/wiki/JavaServer_Faces" target="_blank"><img src="https://raw.githubusercontent.com/mcosta21/alarme-contra-incendio/master/docs/icon-jsf.png" alt="JSF" width="150"></a>
@@ -107,13 +105,11 @@ Basicamente, este projeto foi desenvolvimento com as seguintes tencologias:
  &nbsp&nbsp
 </p>
 
-Vale ressaltar que a aplicação e o arduino irão estabelecer a comunicação serial via porta USB.
-
 ## Simulação
 
 <img src="https://raw.githubusercontent.com/mcosta21/alarme-contra-incendio/master/docs/banner-tinkercad.png" alt="Banner">
 
-Conforme mencionado anteriormente, foi criado um circuito no Tinkercad para fins de testes, logo, você pode acessa-lo através desse link abaixo.
+Conforme mencionado anteriormente, foi criado um circuito no Tinkercad para fins de testes, logo, você pode acessa-lo através do link abaixo.
 
 <p align="center">
  <a href="https://www.tinkercad.com/things/a4jds0HMe1j-alarme-de-incendio" target="_blank"><img src="https://raw.githubusercontent.com/mcosta21/alarme-contra-incendio/master/docs/button.png" alt="Visualizar Tinkercad" width="200"></a>
@@ -121,7 +117,7 @@ Conforme mencionado anteriormente, foi criado um circuito no Tinkercad para fins
 
 ## Iniciar projeto
 
-Com a Eclipse IDE instalado, abra o terminal e siga as seguintes instruções:
+Com a Eclipse IDE instalado, e em posse do terminal, siga as seguintes instruções:
 
 ```bash
 # Clonar o repositório
@@ -130,13 +126,13 @@ $ git clone https://github.com/mcosta21/alarme-contra-incendio
 # Abra o projeto no Eclipse
 Arquivo > Abrir projeto
 
-# Adicionando servidor Tomcat
+# Adicione servidor Tomcat
 Na janela `Servidores`, busque adicionar um novo servidor e localize o tipo 'Tomcar v9.0 Server'
 e avance para as configurações, em seguida adicione o projeto 'alarme-contra-incendio'
 clicando em `Adicionar`
 
 # Iniciar a aplicação
-Note que o servidor estará parado, clique no botão `Iniciar`
+Note que o servidor estará em estado de parado, clique no botão `Iniciar`
 
 # Acesse a aplicação
 No navegador, acesse 'http://localhost:8080/alarme/'

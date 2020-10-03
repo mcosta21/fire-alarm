@@ -13,7 +13,7 @@
 * [Sobre o projeto](#sobre-o-projeto)
   * [Componentes Físicos](#componentes-físicos)
   * [Componentes do Tinkercad](#componentes-do-tinkercad)
-* [Estrutura](#prerequisites)
+* [Estrutura](#estrutura)
   * [Arduino e Tinkercad](#arduino-e-tinkercad)
   * [Web](#web)
 * [Simulação](#simulação)

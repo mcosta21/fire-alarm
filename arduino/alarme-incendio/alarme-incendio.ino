@@ -102,7 +102,7 @@ bool presenceAlarm(){
 bool temperatureAlarm(int min, int max, int percentage){
     float decimal = analogRead(pinTemperature);
     float voltTemperature = convertDecToVolt(decimal);
-    float value = 24;//convertVoltToCelsius(voltTemperature);
+    float value = convertVoltToCelsius(voltTemperature);
     float cutValue = calculeCutValue(min, max, percentage);
     bool response = (value >= cutValue || value > max) ? true : false;
     serialPrint("[temp,", String(getPercentageOfValue(min, max, value)) + '%', String(value), response, 0);

@@ -21,7 +21,7 @@
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-* [About the Project](#about-the-project)
+* [Sobre o projeto](#sobre-o-projeto)
   * [Built With](#built-with)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
@@ -48,7 +48,7 @@ Logo, definiu-se a utilização dos seguintes sensores e condições a serem tra
 Diante dessas definições, atribuiu-se níves de alarme de acordo com as ocorrências, resultando na seguinte tabela:
 
 | Nível | Gás | Luz | Temperatura | Presença |
-| --- | --- |
+| --- | --- | --- | --- | --- |
 | `Normal` | False | False | False | True or False |
 | `Em risco` | False | False | True | True or False |
 | `Risco eminente` | True | False | True | True or False |
@@ -56,12 +56,58 @@ Diante dessas definições, atribuiu-se níves de alarme de acordo com as ocorr�
 | `Incêndio Nível 2` | True | True | True | False |
 | `Alerta Vermelho` | True or False | True | True | True |
 
-Inicialmente idealizado There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need.
+Então, a partir dos valores condicionais, foi possível atribuir um conjunto para cada leitura provida pelo Arduino, a fim de "printar" via comunicação serial, e tratar tais valores pela aplicação.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
+```
+[gas,7.45%,54,0];[light,56.86%,145,0];[temp,45.00%,24.00,1];[presence,Movimento local,1,1];
+```
+
+#### Componentes físicos
+
+* Arduino UNO;
+* Jumper;
+* Protoboard;
+* Sensor Fotoresistor LDR de 5mm;
+* Sensor de presença (PIR);
+* Sensor de temperatura TMP36;
+* Sensor de Gás MQ-5 GLP (Gás de Cozinha e Gás Natural);
+* Resistor de 10kΩ;
+
+#### Componentes do Tinkercad
+
+* Arduino UNO;
+* Jumper;
+* Protoboard;
+* Sensor de luz ambiente;
+* Sensor de presença (PIR);
+* Sensor de temperatura TMP36;
+* Sensor de gás;
+* Piezo;
+* Display lcd 16x2;
+* Resistores de 220Ω, 1kΩ, e 10kΩ;
+
+## Estrutura
+
+Vale ressaltar que além da criação da aplicação, foi construido um circuito similar na plataforma Tinkercad, de modo que possamos realizar testes virtualmente. Então, note que a estrutura do projeto se divide em três pastas, onde tem-se: 
+
+* **arduino**: Pasta contendo o arquivo com código fonte para implementação do projeto no Arduino UNO;
+* **tinkercad**: Pasta contendo o arquivo com código fonte usado em simulação do circuito no Tinkercad;
+* **web**: Pasta referente a aplicação JSF;
+
+#### Arduino e Tinkercad
+A implementação do código em ambos ambientes seguiram a mesma base, diferenciado-se apenas no modelo dos sensores, que por sua vez, influenciou nos valores de medição de cada um deles. E além disso, a simulação do projeto no tinkercad conta com um Display 16x2 para subir a ausência da aplicação web.
+
+#### Web
+Quanta a aplicação JSF, foi criado um projeto Maven com uso da IDE Eclipse e um servidor Tomcat 9 para rodar a aplicação. No arquivo **pom.xml** é encontrado as dependências do projeto, onde tem-se a dependência referida ao framework **Primefaces** para criar da interface, e a biblioteca **JSerialComm**, reponsável pela métodos de comunicação serial com o arduino.
+
+
+<p align="center">
+ <a href="https://fazecast.github.io/jSerialComm/" target="_blank"><img src="https://raw.githubusercontent.com/mcosta21/alarme-contra-incendio/master/docs/icon-jserialcomm.png" alt="jSerialComm" width="200"></a>
+ &nbsp&nbsp&nbsp&nbsp
+ <a href="https://www.primefaces.org/showcase/getstarted.xhtml" target="_blank"><img src="https://raw.githubusercontent.com/mcosta21/alarme-contra-incendio/master/docs/icon-primefaces.png" alt="Primfaces" width="200"></a>
+</p>
+
+Vale ressaltar que a aplicação e o arduino irão estabelecer a comunicação serial via porta USB.
 
 Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue.
 

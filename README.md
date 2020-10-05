@@ -53,7 +53,7 @@ Então, a partir dos valores condicionais, foi possível atribuir um conjunto pa
 
 Caso queira saber mais detalhes de implementação do projeto, acesse:
  <p align="center">
- <a href="https://drive.google.com/file/d/1yZ-mE7z3u337JBjwx6j6d9nsnO-VkfRf/view?usp=sharing" target="_blank"><img src="https://raw.githubusercontent.com/mcosta21/alarme-contra-incendio/master/docs/button.png" alt="Visualizar Tinkercad" width="150"></a>
+ <a href="https://drive.google.com/file/d/1yZ-mE7z3u337JBjwx6j6d9nsnO-VkfRf/view?usp=sharing" target="_blank"><img src="https://raw.githubusercontent.com/mcosta21/alarme-contra-incendio/master/docs/button.png" alt="Visualizar Tinkercad" width="180"></a>
  </p>
 
 #### Componentes físicos
@@ -117,7 +117,7 @@ Basicamente, este projeto foi desenvolvimento com as seguintes tecnologias:
 Conforme mencionado anteriormente, foi criado um circuito no Tinkercad para fins de testes, logo, você pode acessa-lo através do link abaixo.
 
 <p align="center">
- <a href="https://www.tinkercad.com/things/a4jds0HMe1j-alarme-de-incendio" target="_blank"><img src="https://raw.githubusercontent.com/mcosta21/alarme-contra-incendio/master/docs/button.png" alt="Visualizar Tinkercad" width="150"></a>
+ <a href="https://www.tinkercad.com/things/a4jds0HMe1j-alarme-de-incendio" target="_blank"><img src="https://raw.githubusercontent.com/mcosta21/alarme-contra-incendio/master/docs/button.png" alt="Visualizar Tinkercad" width="180"></a>
  </p>
 
 ## Iniciar projeto

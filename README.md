@@ -4,7 +4,8 @@
 </p>
 
 <p align="center">
-    Aplicação JSF que realiza comunicação serial com Arduino UNO para monitorar ambiente a fim de prevenir contra incêndios.
+    Aplicação JSF que realiza comunicação serial com Arduino UNO <br />
+    para monitorar ambiente a fim de prevenir contra incêndios.
     <br />
   </p>
 
@@ -27,8 +28,9 @@
 
  <img src="https://raw.githubusercontent.com/mcosta21/alarme-contra-incendio/master/docs/banner.png" alt="Banner">
 
-O projeto em questão visa o monitoramento de um determinado ambiente, de modo a prevenir riscos contra incêndios, assim foi estabelecido uma comunicação serial entre um Arduino UNO, o qual irá gerenciar os sensores, e uma aplicação JSF (Java Server Faces) para exibir as leituras e alertas conforme níveis condicionais.
-Logo, definiu-se a utilização dos seguintes sensores e condições a serem tratadas:
+<p align="justify">O projeto em questão visa o monitoramento de um determinado ambiente, de modo a prevenir riscos contra incêndios, assim foi estabelecido uma comunicação serial entre um Arduino UNO, o qual irá gerenciar os sensores, e uma aplicação JSF (Java Server Faces) para exibir as leituras e alertas conforme níveis condicionais.
+Logo, definiu-se a utilização dos seguintes sensores e condições a serem tratadas:</p>
+
 * **Sensor de gás**: Detectar uma concentração de gás no ambiente igual ou superior a 30%;
 * **Sensor de luz**: Averigar uma luminosidade excessiva igual ou superior a 60%, que indique possíveis causas de incêncio;
 * **Sensor de temperatura**: Medir a temperatura ambiente do local, de modo a associar uma temperatura normal de 15°C a 35°C, sendo passível de alarmar em variações abruptas a 20% ou superiores a 35°C;
@@ -82,17 +84,17 @@ Caso queira saber mais detalhes de implementação do projeto, acesse:
 
 ## Estrutura
 
-Além da criação da aplicação, foi construido um circuito similar na plataforma Tinkercad, de modo que possamos realizar testes virtualmente. Então, note que a estrutura do projeto se divide em três pastas, onde tem-se: 
+<p align="justify">Além da criação da aplicação, foi construido um circuito similar na plataforma Tinkercad, de modo que possamos realizar testes virtualmente. Então, note que a estrutura do projeto se divide em três pastas, onde tem-se: </p>
 
 * **arduino**: Pasta contendo o arquivo com código fonte para implementação do projeto no Arduino UNO;
 * **tinkercad**: Pasta contendo o arquivo com código fonte usado em simulação do circuito no Tinkercad;
 * **web**: Pasta referente a aplicação JSF;
 
 #### Arduino e Tinkercad
-A implementação do código em ambos ambientes seguiram a mesma base, diferenciado-se apenas no modelo dos sensores, que por sua vez, influencia nos valores de medição de cada um deles. E além disso, a simulação do projeto no tinkercad conta com um Display 16x2 para subir a ausência da aplicação web.
+<p align="justify">A implementação do código em ambos ambientes seguiram a mesma base, diferenciado-se apenas no modelo dos sensores, que por sua vez, influencia nos valores de medição de cada um deles. E além disso, a simulação do projeto no tinkercad conta com um Display 16x2 para subir a ausência da aplicação web.</p>
 
 #### Web
-Quanta a aplicação JSF, foi criado um projeto Maven com uso da IDE Eclipse e um servidor Tomcat 9 para rodar a aplicação. No arquivo **pom.xml** é encontrado as dependências do projeto, onde tem-se a dependência referida ao framework **Primefaces** para criar da interface, e a biblioteca **JSerialComm**, reponsável pelos métodos de comunicação serial com o arduino. Vale ressaltar que a aplicação e o arduino irão estabelecer a comunicação serial via porta USB.
+<p align="justify">Quanta a aplicação JSF, foi criado um projeto Maven com uso da IDE Eclipse e um servidor Tomcat 9 para rodar a aplicação. No arquivo <strong>pom.xml</strong> é encontrado as dependências do projeto, onde tem-se a dependência referida ao framework <strong>Primefaces</strong>para criar da interface, e a biblioteca <strong>JSerialComm</strong>, reponsável pelos métodos de comunicação serial com o arduino. Vale ressaltar que a aplicação e o arduino irão estabelecer a comunicação serial via porta USB.</p>
 
 ## Tecnologias
 Basicamente, este projeto foi desenvolvimento com as seguintes tecnologias:
